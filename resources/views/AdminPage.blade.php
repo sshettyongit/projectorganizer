@@ -36,6 +36,7 @@
             background:black;
         }
     </style>
+    @notifyCss
 </head>
 <body>
 <nav class="navbar navbar-dark bg-dark">
@@ -86,6 +87,7 @@
         </tbody>
 </table>
 </div>
-
+@notifyjs
+@include('notify::messages')
 </body>
 </html>

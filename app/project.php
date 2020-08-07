@@ -12,5 +12,10 @@ class project extends Model
 
     public function users(){
         return $this->belongsToMany(User::class)->withPivot('upid')->withTimestamps();
+    
+    }
+
+    public function tasks(){
+        return $this->hasMany(tasks::class);
     }
 }

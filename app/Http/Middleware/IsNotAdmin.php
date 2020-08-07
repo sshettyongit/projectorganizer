@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Middleware;
-
-use Closure;
 use Illuminate\Support\Facades\Auth;
+use Closure;
 
-class isAdmin
+class IsNotAdmin
 {
     /**
      * Handle an incoming request.
@@ -16,9 +15,10 @@ class isAdmin
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::check() && Auth::user()->is_admin == 1){
+        if(Auth::check() && Auth::user()->is_admin == 0){
             return $next($request);
         }
+
         abort(403);
     }
 }

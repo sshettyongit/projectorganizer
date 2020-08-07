@@ -37,11 +37,13 @@ class AdminController extends Controller
         $category = User::findorFail($id);
         $category->is_admin = $request->admin;
         $category->save();
+        notify()->success('Updated details successfully ⚡️');
         return redirect()->route('admin.panel');
     }
 
     public function userdelete($id){
         $category = User::find($id)->delete();
+        notify()->success('Deleted details successfully ⚡️');
         return back();
         }
     
@@ -66,6 +68,7 @@ class AdminController extends Controller
 
     public function deleteproject($pid){
         $detail = project::findorFail($pid)->delete();
+        notify()->success('Project Deleted successfully');
         return back();
     }
 

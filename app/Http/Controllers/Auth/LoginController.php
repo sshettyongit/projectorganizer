@@ -26,8 +26,17 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/adminpanel';
-
+    
+    //    protected  $redirectTo = '/adminpanel';
+    protected function redirectTo(){
+        if(Auth::user()->is_admin == 1){
+            return '/adminpanel' ;
+        }
+        else{
+            
+            return '/user/homepage/'.Auth::user()->id ;
+        }
+    }
     /**
      * Create a new controller instance.
      *
@@ -42,7 +51,6 @@ class LoginController extends Controller
     {
         $this->guard()->logout();
         $request->session()->flush();
-        $request->session()->regenerate();
-        return redirect()-> route('welcome.home');
+       return redirect()-> route('welcome.home');
     }
 }

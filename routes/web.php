@@ -19,7 +19,7 @@ Route::group(['middleware' => 'isAdmin'],  function(){
     Route::get('/adminrights/{id}' , 'AdminController@adminrights')->name('make.admin');
     Route::post('/admin/{id}' , 'AdminController@adminupdate')->name('admin.update');
     Route::get('/remove/{id}', 'AdminController@userdelete' )->name('remove.user');
-    Route::get('/logout' , 'Auth\LoginController@logout')->name('logout');
+    //Route::get('/logout' , 'Auth\LoginController@logout')->name('logout');
     Route::get('/projects', 'AdminController@projectdetails')->name('project.details');
     Route::get('/projectrename/{pid}' , 'AdminController@renameproject')->name('rename.project');
     Route::post('/projectupdate/{pid}', 'AdminController@updateproject')->name('update.project');
@@ -28,5 +28,17 @@ Route::group(['middleware' => 'isAdmin'],  function(){
     Route::post('/project/store' , 'AdminController@store')->name('new.project');
     Route::get('/project/detail/{pid}' , 'AdminController@data')->name('user.project');
     Route::get('/project/rel/{id}/{pid}' , 'AdminController@relationdelete')->name('delete.relation');
-    Route::get('/project/add/{id}/{pid}' , 'AdminController@addnewmember')->name('add.details');
+    Route::post('/project/add/{id}/{pid}' , 'AdminController@addnewmember')->name('add.details');
+    
+});
+
+Route::get('/logout' , 'Auth\LoginController@logout')->name('logout');
+
+Route::group(['middleware' => 'IsNotAdmin'] , function(){
+    Route::get('/user/homepage/{id}', 'UserController@userpanel')->name('user.homepage');
+    Route::get('/user/profile/{id}' , 'UserController@profileedit')->name('userprofile.edit');
+    Route::post('/user/edit/{id}','UserController@profileupdate')->name('edit.profile');
+    Route::get('user/project/{id}/{pid}' , 'UserController@projectsdetails')->name('userproject.details');
+    Route::get('/user/project/add/{id}/{pid}', 'UserController@addTasks')->name('add.tasks');
+    Route::post('/user/task/create/{id}/{pid}' , 'TasksController@createtask')->name('create.task');
 });

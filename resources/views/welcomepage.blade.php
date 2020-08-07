@@ -34,7 +34,7 @@
             
         }
         .ct1{
-            background:#343A40;
+            background:#212121;
             padding-top : 30px;
             padding-bottom : 50px;
         }
@@ -153,10 +153,10 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li class="nav-item ml-1">
         <a class="nav-link mb tt2" href="{{ route('login') }}">LOGIN</a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item ml-1">
         <a class="nav-link mb tt2" href="{{ route('register') }}">REGISTER</a>
       </li>
       <li class="nav-item dropdown">
