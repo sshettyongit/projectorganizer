@@ -24,6 +24,7 @@ class AdminController extends Controller
         $category->name = $request->name;
         $category->email = $request->email ;
         $category->save();
+        notify()->success('Updated successfully ⚡️');
         return redirect()->route('admin.panel');
     }
     
@@ -37,13 +38,13 @@ class AdminController extends Controller
         $category = User::findorFail($id);
         $category->is_admin = $request->admin;
         $category->save();
-        notify()->success('Updated details successfully ⚡️');
+        notify()->success('Made Admin successfully ⚡️');
         return redirect()->route('admin.panel');
     }
 
     public function userdelete($id){
         $category = User::find($id)->delete();
-        notify()->success('Deleted details successfully ⚡️');
+        notify()->success('Deleted deleted successfully ⚡️');
         return back();
         }
     
@@ -62,7 +63,7 @@ class AdminController extends Controller
         $details->Pname = $request->Pname;
         $details->description = $request->Pdescription;
         $details->save();
-
+        notify()->success('Updated successfully ⚡️');
         return redirect()->route('project.details');
     }
 

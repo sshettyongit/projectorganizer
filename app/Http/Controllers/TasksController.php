@@ -16,7 +16,7 @@ class TasksController extends Controller
         $pd = project::find($pid);
         //return $pd;
         $pid = project::find($pid);
-        notify()->success('New task added successfully!');
+        notify()->success('Task added successfully⚡️');
         $tasks = tasks::create([
             'Tname' => $request->Tname,
             'Tdescription' => $request->Tdescription,
@@ -25,6 +25,7 @@ class TasksController extends Controller
             'updated_at' => NULL,
         ]);
         $id = User::find($id);
+        notify()->success('Task added successfully⚡️');
         return redirect()->route('userproject.details', compact('id' , 'pid'));
     }
 

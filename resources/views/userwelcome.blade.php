@@ -22,7 +22,7 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 
-   
+    @notifyCss
     <style>
          .box1{
              margin-left:-15px;
@@ -119,6 +119,8 @@
         </div>
         </nav>
         <!--/.Navbar -->
+        @include('notify::messages')     
+        @notifyJs
     
     <div class="container">
         <img src="{{ asset('images\userwelcome.jpg')}}"  class="container-fluid box1 animate__animated animate__fadeInUp" alt="">
@@ -151,8 +153,8 @@
             </table>
             </div>
             <div class="container box22">The above table displays the projects that you are associated with.</div>
-            @include('notify::messages')
-        @notifyJs
+
+            
         
     </div> 
     <div class="container-fluid ">

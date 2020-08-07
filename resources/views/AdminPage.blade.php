@@ -87,7 +87,8 @@
         </tbody>
 </table>
 </div>
-@notifyjs
 @include('notify::messages')
+@notifyJs
+
 </body>
 </html>

@@ -22,7 +22,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
-
+  
     <style>
       .formbox{
         margin-top:130px;
@@ -52,7 +52,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
             <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="">BACK
+                <a class="nav-link" href="{{ route('userproject.details' , ['id' => Auth::user()->id , 'pid' => $proj->pid]) }}">BACK
                 </a>
             </li>
             <li class="nav-item">
