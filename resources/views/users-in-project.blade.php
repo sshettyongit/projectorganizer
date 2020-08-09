@@ -76,7 +76,9 @@
             padding-top:10px;
             margin-bottom:50px;
         }
+        
     </style>
+    @notifyCss
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark">
@@ -127,7 +129,7 @@
                     <td>{{ $data->id }}</td>
                     <td>{{ $data->name }}</td>
                     <td>{{ $data->email }}</td>
-                    <td> <a onclick="deleted()" href="{{ route('delete.relation', ['id' => $data->id, 'pid' => $pro->pid]) }}">DELETE</a>
+                    <td> <a " href="{{ route('delete.relation', ['id' => $data->id, 'pid' => $pro->pid]) }}">DELETE</a>
                     </td>
                 </tr>
             @endforeach
@@ -145,20 +147,14 @@
         <tbody>
             <td>{{ $users->id }}</td>
             <td>{{ $users->name }}</td>
-            <td> <a onclick="added()" href="{{ route('add.details', ['id' => $users->id , 'pid' => $pro->pid]) }}">
+            <td> <a  href="{{ route('add.details', ['id' => $users->id , 'pid' => $pro->pid]) }}">
             ADD</a></td>
         </tbody>
         @endforeach
      </table>
      </div>  
-     <script>
-        function added(){
-            alert("user added to the project successfully");
-        }
-        function deleted(){
-            alert("user deleted successfully");
-        }
-     </script>
+     @include('notify::messages')
+     @notifyJs
 
 <footer class="page-footer font-small mdb-color darken-3">
 

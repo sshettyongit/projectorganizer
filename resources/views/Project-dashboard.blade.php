@@ -15,7 +15,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
-    @notifyCss
+    
     <style>
         .mainnav{
             padding-top:15px;
@@ -50,6 +50,7 @@
             color:white;
         }
     </style>
+    @notifyCss
 </head>
 <body>
 <nav class="navbar navbar-dark bg-dark">
@@ -67,8 +68,9 @@
           <a class="dropdown-item" href="/logout">LOGOUT</a>
         </div>
       </div>
-      @notifyJs
       @include('notify::messages')
+      @notifyJs
+      
       <div></div>
     </span>
 </nav>

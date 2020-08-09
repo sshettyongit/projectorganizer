@@ -78,7 +78,7 @@
         <!--/.Navbar -->
         
         <div class="container box1">
-            <form action="{{ route('create.task', ['id' => Auth::user()->id , 'pid' => $proj->pid] )}}" method="POST">
+            <form action="{{ route('create.task', ['$id' => Auth::user()->id , '$pid' => $proj->pid] )}}" method="POST">
                 @csrf
                     <div class="form-group">
                         <label for="exampleInputName">TASK NAME</label>

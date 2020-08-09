@@ -16,6 +16,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
 
     <style>
         .customnav{
@@ -130,7 +131,6 @@
           float:right;
 
         }
-        
         .ttbx2{
           float:left;
 
@@ -178,12 +178,12 @@
 </nav>
     <div class="container1">
         <div class="ct1">
-            <div class="ct11">"A place to create , organise and keep track of project developomental activities"</div>
+            <div class="ct11 animate__animated animate__fadeInDown animate__delay-1s">"A place to create , organise and keep track of project developomental activities"</div>
         </div>
     </div>
     <div class="container2">
         <div class="ct21 d-inline-block">
-            <img src="{{ asset('images\people.jpg') }}" class="brac" alt="ppl together working">
+            <img src="{{ asset('images\people.jpg') }}" class="brac animate__animated animate__fadeInLeft animate__delay-2s animate__slow-2s" alt="ppl together working">
         </div>
         <div class="ct22 d-inline-block">
             <div class="tbt1">
@@ -196,15 +196,15 @@
       <div class="container contain2"> 
           <div class="row">
             <div class="col-4">
-              <img class="imgstyle" src="{{ asset('images\organize.jpg') }}" alt="">
+              <img class="imgstyle animate__animated animate__flipInX animate__delay-5s animate__slower-4s" src="{{ asset('images\organize.jpg') }}" alt="">
               <div class="piccap">Track your schedule to work efficiently</div>
             </div>
             <div class="col-4">
-              <img class="imgstyle" src="{{ asset('images\graph.jpg') }}" alt="">
+              <img class="imgstyle animate__animated animate__flipInX animate__delay-5s animate__slower-4s" src="{{ asset('images\graph.jpg') }}" alt="">
               <div class="piccap">Keep a track of all developmental activities</div>
             </div>
             <div class="col-4">
-              <img class="imgstyle" src="{{ asset('images\collaborate.jpg') }}" alt="">
+              <img class="imgstyle animate__animated animate__flipInX animate__delay-5s animate__slower-4s" src="{{ asset('images\collaborate.jpg') }}" alt="">
               <div class="piccap">"All in one stop" to organize things</div>
             </div>
           </div>

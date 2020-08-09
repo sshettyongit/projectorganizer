@@ -21,6 +21,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
 
     @notifyCss
     <style>
@@ -40,7 +41,7 @@
             background-color:#FFA726;
             height:auto;
             margin-top:-50px;
-            margin-bottom:50px;
+            margin-bottom:10px;
             padding-top:100px;
             text-align:center;
             padding-bottom:100px;
@@ -78,8 +79,20 @@
             visibility: hidden;
             font-size:27px;
             text-align:center;
-            margin-bottom:40px;
-
+            margin-bottom:20px;
+        }
+        .infobox{
+            margin-bottom:120px;
+            text-align:center;
+        }
+        .info{
+            font-size:30px;
+            padding-top: -50px;     
+        }
+        .containimg{
+            height:70px;
+            width:70px;
+            margin-top:20px;
         }
     </style>
      @notifyCss
@@ -88,7 +101,7 @@
 <body>
             <!--Navbar -->
         <nav class="mb-3 pt-4 pb-4 navbar font-weight-bold navbar-expand-lg navbar-dark orange lighten-1">
-        <a class="navbar-brand pr-5 pl-4 black-text" href="#">PROJECTMANAGER</a>
+        <a class="navbar-brand pr-5 pl-4 black-text animate__animated animate__fadeInLeft" href="#">PROJECTMANAGER</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
             aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -96,14 +109,14 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
             <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('userprofile.edit',['$id' => $user->id])}}">Edit profile
+                <a class="nav-link animate__animated animate__fadeInLeft animate__delay-1s" href="{{ route('userprofile.edit',['$id' => $user->id])}}">Edit profile
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link animate__animated animate__fadeInLeft animate__delay-2s" href="#">Features</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
+                <a class="nav-link animate__animated animate__fadeInLeft animate__delay-3s" href="#">Pricing</a>
             </li>
             </ul>
             <ul class="navbar-nav ml-auto nav-flex-icons">
@@ -124,7 +137,7 @@
     
     <div class="container">
         <img src="{{ asset('images\userwelcome.jpg')}}"  class="container-fluid box1 animate__animated animate__fadeInUp" alt="">
-        <div class="captiontxtbx animate__animated animate__fadeIn ">WELCOME, {{ Auth::user()->name }}</div>
+        <div class="captiontxtbx animate__animated animate__fadeIn animate__slower-7s">WELCOME, {{ Auth::user()->name }}</div>
     </div>
     <div class="container-fluid box2">
         <div class="txt21 ">DASHBOARD</div>
@@ -168,12 +181,10 @@
             document.querySelector(".container-fluid #boxhide").style.visibility = "visible";
         }
     </script>
-    
-
-    
-
-
-
+    <div class="container infobox animate__animated animate__fadeIn animate__slower-5s">
+        <span class="info animate__animated animate__fadeIn animate__delay-7s">Click on 'Details' for more information regarding the project </span>
+        <br><span><img src="{{ asset('images\browser.png')}}"  class="containimg" alt=""></span>
+    </div>
 
     <footer class="page-footer font-small mdb-color darken-3">
     <div class="container">

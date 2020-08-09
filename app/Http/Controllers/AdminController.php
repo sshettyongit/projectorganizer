@@ -102,12 +102,14 @@ class AdminController extends Controller
    public function relationdelete($id,$pid){
         $projects = project::findorFail($pid);
         $projects->users()->detach($id);
+        notify()->emotify('success','User deleted successfully');
         return back();
    }
 
    public function addnewmember($id,$pid){
        $projects = project::find($pid);
        $projects->users()->syncWithoutDetaching($id);
+       notify()->emotify('success','User added successfully');
        return back();
    }
 

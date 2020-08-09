@@ -21,6 +21,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <style>
     .infobox{
         margin-top:50px;
@@ -55,7 +56,7 @@
 <body>
     <!--Navbar -->
     <nav class="mb-3 pt-4 pb-4 navbar font-weight-bold navbar-expand-lg navbar-dark orange lighten-1">
-        <a class="navbar-brand pr-5 pl-4 black-text" href="#">PROJECTMANAGER</a>
+        <a class="navbar-brand pr-5 pl-4 black-text animate__animated animate__fadeIn " href="#">PROJECTMANAGER</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
             aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -63,14 +64,14 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
             <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('user.homepage', ['id' => Auth::user()->id]) }}">BACK
+                <a class="nav-link animate__animated animate__fadeIn animate__delay-1s" href="{{ route('user.homepage', ['id' => Auth::user()->id]) }}">BACK
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link animate__animated animate__fadeIn animate__delay-2s" href="#">Features</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
+                <a class="nav-link animate__animated animate__fadeIn animate__delay-3s href="#">Pricing</a>
             </li>
             </ul>
             <ul class="navbar-nav ml-auto nav-flex-icons">
@@ -86,7 +87,7 @@
         </div>
         </nav>
         <!--/.Navbar -->
-    <div class="infobox container">
+    <div class="infobox container animate__animated animate__fadeIn animate__delay-1s">
         <span><div class="txt1">Project Name : {{ $proj->Pname }}</div></span>
         <span><div class="txt2">{{ $proj->description }}</div></span>
         <span><div class="txt3"> <span class="txt31">Created at:</span>  {{ $proj->created_at }}</div></span>
@@ -103,17 +104,19 @@
             <th scope="col">Descrption</th>
             <th scope="col">Created at</th>
             <th scope="col">Status</th>
+            <th scope="col">Change Status</th>
             <th scope="col">Status updated at</th>
           </tr>
         </thead>
         <tbody>
           @foreach($tasks as $task)
-            <tr>
+            <tr class="animate__animated animate__fadeIn">
               <th scope="row">T-{{ $task->tid }}</th>
               <td>{{ $task->Tname}}</td>
               <td>{{ $task->Tdescription }}</td>
               <td>{{ $task->created_at }}</td>
               <td>{{ $task->task_status }}</td>
+              <td> <a href="{{ route('edit.status' , ['id' =>Auth::user()->id  , 'pid' => $proj->pid , '$tid' => $task->tid ]) }}">CLICK HERE</a></td>
               <td>{{ $task->updated_at }}</td>
             </tr>
           @endforeach

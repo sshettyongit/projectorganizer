@@ -28,7 +28,7 @@ Route::group(['middleware' => 'isAdmin'],  function(){
     Route::post('/project/store' , 'AdminController@store')->name('new.project');
     Route::get('/project/detail/{pid}' , 'AdminController@data')->name('user.project');
     Route::get('/project/rel/{id}/{pid}' , 'AdminController@relationdelete')->name('delete.relation');
-    Route::post('/project/add/{id}/{pid}' , 'AdminController@addnewmember')->name('add.details');
+    Route::get('/project/add/{id}/{pid}' , 'AdminController@addnewmember')->name('add.details');
     
 });
 
@@ -41,4 +41,6 @@ Route::group(['middleware' => 'IsNotAdmin'] , function(){
     Route::get('user/project/{id}/{pid}' , 'UserController@projectsdetails')->name('userproject.details');
     Route::get('/user/project/add/{id}/{pid}', 'UserController@addTasks')->name('add.tasks');
     Route::post('/user/task/create/{id}/{pid}' , 'TasksController@createtask')->name('create.task');
+    Route::get('/user/task/edit/status/{id}/{pid}/{tid}' , 'TasksController@editStatus')->name('edit.status');
+    Route::post('/user/task/change/status/{id}/{pid}/{tid}' , 'TasksController@changeStatus')->name('change.status');
 });
